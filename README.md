@@ -28,8 +28,6 @@ The important things are happening in:
 
 	src/pages/home/
 
-Changes them to your needs.
-
 ## History
 
 Version: 1.0
