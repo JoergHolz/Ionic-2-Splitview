@@ -1,0 +1,53 @@
+<!-- Left Header only visible on tablets -->
+<ion-header *ngIf="isTablet" class="leftHeader">
+    <ion-navbar color='navbarColor' hideBackButton="true">
+        <ion-title>Left Header</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<!-- Main/Right Header visible on all devices. -->
+<ion-header class="rightHeader {{isTablet}}">
+    <ion-navbar color='navbarColor' hideBackButton="true">
+        <button *ngIf="!isTablet" ion-button icon-only menuToggle="left">
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-buttons end>
+            <button ion-button icon-only menuToggle="right">
+                <ion-icon name="settings"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>App Title</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="no-scroll">
+
+    <!-- Left sidebar only visible on tablets. -->
+    <div *ngIf="isTablet" class="sidebarBody" padding>
+        <ion-title><small>Tablet Sidebar</small></ion-title>
+    </div>
+
+    <!-- The main content of the app. -->
+    <div class="mainContent {{isTablet}}" padding>
+        <ion-title><small>Main Content</small></ion-title>
+    </div>
+
+</ion-content>
+
+<ion-footer>
+
+    <!-- Left sidebar footer only visible on tablets. -->
+    <div *ngIf="isTablet" class="leftFooter">
+        <ion-navbar color='navbarColor'>
+            <ion-title><small>Left Footer</small></ion-title>
+        </ion-navbar>
+    </div>
+
+    <!-- Main/Right Footer visible on all devices. -->
+    <div class="rightFooter {{isTablet}}">
+        <ion-navbar color='navbarColor'>
+            <ion-title><small>Main/Right Footer</small></ion-title>
+        </ion-navbar>
+    </div>
+
+</ion-footer>
